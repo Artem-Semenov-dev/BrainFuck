@@ -1,8 +1,8 @@
 package BrainfuckCompiler.commands;
 
-import BrainfuckCompiler.commands.Memory;
-
 public class Decrement implements Command{
+    public static char symbol = '-';
+
     @Override
     public void execute(Memory memory) {
         memory.decrement();

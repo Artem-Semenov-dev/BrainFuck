@@ -42,6 +42,23 @@ public class CompilerUnitTests {
     }
 
     @Test
+    public void testDoubleIncrement(){
+        DoubleIncrement newCommand = new DoubleIncrement();
+        Memory memory = new Memory();
+        newCommand.execute(memory);
+        Assertions.assertEquals(2, memory.getValue());
+    }
+
+    @Test
+    public void overflowDoubleIncrementTest(){
+        DoubleIncrement newCommand = new DoubleIncrement();
+        Memory memory = new Memory();
+        memory.setValue((byte)254);
+        newCommand.execute(memory);
+        Assertions.assertEquals(0, memory.getValue());
+    }
+
+    @Test
     public void testPointerToLeft(){
         PointerToLeft ptl = new PointerToLeft();
         Memory memory = new Memory();

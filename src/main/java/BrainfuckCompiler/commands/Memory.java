@@ -28,6 +28,15 @@ public class Memory {
             tape[pointer]--;
     }
 
+    public void doubleIncrement(){
+        if (tape[pointer] == (byte) MAX_VALUE_FOR_CELL)
+            tape[pointer] = 0;
+        else {
+            tape[pointer]++;
+            tape[pointer]++;
+        }
+    }
+
     public void ptrToLeft() {
         try {
             pointer--;

@@ -3,6 +3,8 @@ package BrainfuckCompiler.commands;
 import java.util.List;
 
 public class Loop implements Command{
+    public static char symbol = ']';
+
     private final List<Command> innerCommands;
 
     public Loop(List<Command> innerList){
